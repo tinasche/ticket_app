@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
-import '../../base/res/media.dart';
-
 class Hotel extends StatelessWidget {
   const Hotel({super.key, required this.hotel});
+
   final Map<String, dynamic> hotel;
 
   @override
@@ -12,11 +11,11 @@ class Hotel extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(right: 16),
-      width: size.width*0.6, height: 350,
+      width: size.width * 0.6,
+      height: 350,
       decoration: BoxDecoration(
-        color: AppStyles.primaryColor,
-        borderRadius: BorderRadius.circular(24)
-      ),
+          color: AppStyles.primaryColor,
+          borderRadius: BorderRadius.circular(24)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,17 +24,27 @@ class Hotel extends StatelessWidget {
             height: 180,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                image: DecorationImage( fit: BoxFit.cover,
+                image: DecorationImage(
+                    fit: BoxFit.cover,
                     image: AssetImage('assets/images/${hotel["image"]}'))),
           ),
-          const SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: Text(hotel["place"], overflow: TextOverflow.fade, style: AppStyles.headline1.copyWith(color: AppStyles.pensiveColor),),
+          const SizedBox(
+            height: 10,
           ),
-          const SizedBox(height: 5,),
           Padding(
-            padding: const EdgeInsets.only(left: 8),
+            padding: const EdgeInsets.only(left: 10),
+            child: Text(
+              hotel["place"],
+              overflow: TextOverflow.ellipsis,
+              style:
+                  AppStyles.headline1.copyWith(color: AppStyles.pensiveColor),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
             child: Text(
               '\$${hotel["price"].toString()}/night',
               style:
@@ -46,11 +55,10 @@ class Hotel extends StatelessWidget {
             height: 5,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 8),
+            padding: const EdgeInsets.only(left: 10),
             child: Text(
               hotel["destination"],
-              style:
-                  AppStyles.headline3.copyWith(color: Colors.white),
+              style: AppStyles.headline3.copyWith(color: Colors.white),
             ),
           ),
         ],
