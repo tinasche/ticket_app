@@ -110,7 +110,7 @@ class _State extends State<HomeScreen> {
                   smallText: "View All",
                   bigText: "Hotels",
                   nextTarget: () =>
-                      Navigator.pushNamed(context, AppRoutes.allTickets),
+                      Navigator.pushNamed(context, AppRoutes.allHotels),
                 ),
                 const SizedBox(height: 20,),
                 SingleChildScrollView(

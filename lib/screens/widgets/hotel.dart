@@ -11,8 +11,8 @@ class Hotel extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(right: 16),
-      width: size.width * 0.6,
-      height: 350,
+      // width: size.width * 0.6,
+      // height: 350,
       decoration: BoxDecoration(
           color: AppStyles.primaryColor,
           borderRadius: BorderRadius.circular(24)),
@@ -21,7 +21,7 @@ class Hotel extends StatelessWidget {
         children: [
           Container(
             margin: const EdgeInsets.all(8),
-            height: 180,
+            // height: 180,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: DecorationImage(
